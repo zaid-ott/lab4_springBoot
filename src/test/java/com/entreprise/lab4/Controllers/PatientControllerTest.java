@@ -39,7 +39,7 @@ public class PatientControllerTest {
 		Mockito.when(patientservice.getPatients()).thenReturn(list) ;
 		ResponseEntity<List<Patient>> resultat= patientcontroller.getPatients();
 		//Then
-		assertEquals(2, resultat.getBody().size()); //on verifie si la taille retourné correspond à 2 (on a creer 2 elements first et second book)
+		assertEquals(2, resultat.getBody().size()); 
 		assertEquals(HttpStatus.OK, resultat.getStatusCode());
 	}
 	
