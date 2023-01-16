@@ -33,13 +33,16 @@ public class RdvControllerTest {
 		List<Rdv> list = new ArrayList<>();
 		Rdv rdv1 = new Rdv();
 		Rdv rdv2 = new Rdv();
+		Rdv rdv3 = new Rdv();
 		list.add(rdv1);
 		list.add(rdv2);
+		list.add(rdv3);
+
 		//When
 		Mockito.when(rdvservice.getRdvs()).thenReturn(list) ;
 		ResponseEntity<List<Rdv>> resultat= rdvcontroller.getRdvs();
 		//Then
-		assertEquals(2, resultat.getBody().size()); 
+		assertEquals(3, resultat.getBody().size()); 
 		assertEquals(HttpStatus.OK, resultat.getStatusCode());
 	}
 	
